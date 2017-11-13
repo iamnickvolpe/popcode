@@ -9,6 +9,7 @@ import {
   getAllProjectKeys,
   isExperimental,
   isGistExportInProgress,
+  isPresentationModeOn,
   isSnapshotInProgress,
   isTextSizeLarge,
   isUserAuthenticated,
@@ -23,6 +24,7 @@ import {
   exportRepo,
   toggleEditorTextSize,
   toggleLibrary,
+  togglePresentationMode,
   toggleTopBarMenu,
   logIn,
   logOut,
@@ -35,6 +37,7 @@ function mapStateToProps(state) {
     enabledLibraries: getEnabledLibraries(state),
     isExperimental: isExperimental(state),
     isGistExportInProgress: isGistExportInProgress(state),
+    isPresentationModeOn: isPresentationModeOn(state),
     isSnapshotInProgress: isSnapshotInProgress(state),
     isTextSizeLarge: isTextSizeLarge(state),
     isUserAuthenticated: isUserAuthenticated(state),
@@ -89,6 +92,10 @@ function mapDispatchToProps(dispatch) {
 
     onToggleTextSize() {
       dispatch(toggleEditorTextSize());
+    },
+
+    onTogglePresentationMode() {
+      dispatch(togglePresentationMode());
     },
   };
 }

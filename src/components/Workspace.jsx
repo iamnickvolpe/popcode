@@ -46,6 +46,11 @@ function mapStateToProps(state) {
     isDraggingColumnDivider: state.getIn(
       ['ui', 'workspace', 'isDraggingColumnDivider'],
     ),
+    isPresentationMode: state.getIn([
+      'ui',
+      'workspace',
+      'presentationModeIsOn',
+    ]),
     isUserTyping: state.getIn(['ui', 'editors', 'typing']),
     editorsFlex: state.getIn(['ui', 'workspace', 'columnFlex']).toJS(),
     rowsFlex: state.getIn(['ui', 'workspace', 'rowFlex']).toJS(),

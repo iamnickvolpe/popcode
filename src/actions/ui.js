@@ -56,6 +56,10 @@ export const toggleEditorTextSize = createAction(
   'TOGGLE_EDITOR_TEXT_SIZE',
 );
 
+export const togglePresentationMode = createAction(
+  'TOGGLE_PRESENTATION_MODE',
+);
+
 export const toggleTopBarMenu = createAction(
   'TOGGLE_TOP_BAR_MENU',
 );

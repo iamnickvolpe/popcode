@@ -52,7 +52,6 @@ class Editor extends React.Component {
 
     this._focusRequestedLine(nextProps.requestedFocusedLine);
     this._applyFontSize(nextProps.textSizeIsLarge);
-
     if (nextProps.percentageOfHeight !== this.props.percentageOfHeight) {
       requestAnimationFrame(this._resizeEditor);
     }

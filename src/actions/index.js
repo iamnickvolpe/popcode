@@ -33,6 +33,7 @@ import {
   refreshPreview,
   popOutProject,
   toggleEditorTextSize,
+  togglePresentationMode,
   toggleTopBarMenu,
   closeTopBarMenu,
 } from './ui';
@@ -79,6 +80,7 @@ export {
   repoExportDisplayed,
   repoExportNotDisplayed,
   toggleEditorTextSize,
+  togglePresentationMode,
   toggleTopBarMenu,
   closeTopBarMenu,
   logIn,

@@ -11,6 +11,7 @@ export const DEFAULT_WORKSPACE = new Immutable.Map({
   columnFlex: DEFAULT_COLUMN_FLEX,
   rowFlex: DEFAULT_ROW_FLEX,
   isDraggingColumnDivider: false,
+  isPresentationModeOn: false,
 });
 
 const defaultState = new Immutable.Map().
@@ -189,6 +190,11 @@ export default function ui(stateIn, action) {
     case 'TOGGLE_EDITOR_TEXT_SIZE':
       return state.updateIn(['editors', 'textSizeIsLarge'],
         textSizeIsLarge => !textSizeIsLarge,
+      );
+
+    case 'TOGGLE_PRESENTATION_MODE':
+      return state.updateIn(['presentationModeIsOn'],
+        presentationModeIsOn => !presentationModeIsOn,
       );
 
     case 'TOGGLE_TOP_BAR_MENU':

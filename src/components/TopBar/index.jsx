@@ -11,6 +11,7 @@ import NewProjectButton from './NewProjectButton';
 import ProjectPicker from './ProjectPicker';
 import SnapshotButton from './SnapshotButton';
 import TextSize from './TextSize';
+import PresentationMode from './PresentationMode';
 
 function uiVariants({validationState, isUserTyping}) {
   if (validationState === 'passed') {
@@ -34,6 +35,7 @@ export default function TopBar({
   isUserAuthenticated,
   isUserTyping,
   isSnapshotInProgress,
+  isPresentationModeOn,
   isTextSizeLarge,
   openMenu,
   projectKeys,
@@ -46,6 +48,7 @@ export default function TopBar({
   onExportGist,
   onExportRepo,
   onLogOut,
+  onTogglePresentationMode,
   onStartLogIn,
   onToggleLibrary,
   onToggleTextSize,
@@ -97,6 +100,10 @@ export default function TopBar({
         onLogOut={onLogOut}
         onStartLogIn={onStartLogIn}
       />
+      <PresentationMode
+        isOn={isPresentationModeOn}
+        onToggle={onTogglePresentationMode}
+      />
     </div>
   );
 }
@@ -107,6 +114,7 @@ TopBar.propTypes = {
   enabledLibraries: PropTypes.arrayOf(PropTypes.string).isRequired,
   isExperimental: PropTypes.bool.isRequired,
   isGistExportInProgress: PropTypes.bool.isRequired,
+  isPresentationModeOn: PropTypes.bool.isRequired,
   isSnapshotInProgress: PropTypes.bool.isRequired,
   isTextSizeLarge: PropTypes.bool.isRequired,
   isUserAuthenticated: PropTypes.bool.isRequired,
@@ -124,6 +132,7 @@ TopBar.propTypes = {
   onLogOut: PropTypes.func.isRequired,
   onStartLogIn: PropTypes.func.isRequired,
   onToggleLibrary: PropTypes.func.isRequired,
+  onTogglePresentationMode: PropTypes.func.isRequired,
   onToggleTextSize: PropTypes.func.isRequired,
 };
 
